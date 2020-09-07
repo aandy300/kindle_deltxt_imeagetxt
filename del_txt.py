@@ -1,5 +1,7 @@
 # 確認檔案是否在 > 去除不要的字元 > 轉繁體 > 另存
 
+# 待更改點 要刪除的文字 改成ARRAY多個? 追加INPUT?
+
 # 檔案是否存在 中文解說
 # https://blog.gtwang.org/programming/python-howto-check-whether-file-folder-exists/
 
