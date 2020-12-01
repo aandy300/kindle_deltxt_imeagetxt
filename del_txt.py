@@ -1,20 +1,27 @@
+import os, time, random
+from zhconv import convert # 簡轉繁
+
 # 確認檔案是否在 > 去除不要的字元 > 轉繁體 > 另存
 
-# 待更改點 要刪除的文字 改成ARRAY多個? 追加INPUT?
+# 待更改點  #########
+# 要刪除的文字 改成ARRAY多個s
 
 # 檔案是否存在 中文解說
 # https://blog.gtwang.org/programming/python-howto-check-whether-file-folder-exists/
 
-import os, time, random
-import progressbar # 進度條 測試用
-from zhconv import convert # 簡轉繁
+# GUI 用 tk
+# https://stackoverflow.com/questions/3579568/choosing-a-file-in-python-with-simple-dialog
+# 存檔 GUI
+# https://stackoverflow.com/questions/19476232/save-file-dialog-in-tkinter
 
-x = 0
-# 進度條 測試用(方便瞭解進度)
-bar = progressbar.ProgressBar(max_value=1000000) 
+# 使用說明 #################################
 
-# 開啟要編輯的檔案 C:/Users/admin/Desktop/1.txt 檔名 1.txt
-with open ('C:/Users/admin/Desktop/1.txt', 'r', encoding='UTF-8') as f :
+text = "的標註|添加於" # 要刪除的行 包含的文字
+openfilename = 'C:/Users/admin/Desktop/0.txt' # 要開啟的檔案路徑
+savefilename = 'C:/Users/admin/Desktop/01.txt' # 要存檔的名稱與路徑
+x = 0 # 去除的行數 計數用
+# 開啟要編輯的檔案
+with open (openfilename, 'r', encoding='UTF-8') as f :
 
     # 確認檔案是否存在 存在的話刪除 防止追加寫入
     if os.path.isfile('C:/Users/admin/Desktop/z.txt'):
@@ -26,7 +33,7 @@ with open ('C:/Users/admin/Desktop/1.txt', 'r', encoding='UTF-8') as f :
     # 去除指定文字 將指定文字以外 存入 z.txt
     for line in f :
         # 通過輸入的字 來刪除文本不要的行
-        text = ('您在位置')
+        # text = ('您在位置')
         # 去除空格
         line = line.replace(" ", "") 
         
@@ -38,7 +45,7 @@ with open ('C:/Users/admin/Desktop/1.txt', 'r', encoding='UTF-8') as f :
             # 簡體字轉繁體字
             line = convert(line, 'zh-tw')
             # "寫入"z.txt  非另存為z.txt
-            with open ('C:/Users/admin/Desktop/z2.txt', 'a', encoding='UTF-8') as f : 
+            with open (savefilename, 'a', encoding='UTF-8') as f : 
                 f.write(line)
                 f.close()
     print('去除的行數:', x)
