@@ -17,7 +17,7 @@ from zhconv import convert # 簡轉繁
 # 使用說明 #################################
 
 text = "的標註|添加於" # 要刪除的行 包含的文字
-openfilename = 'C:/Users/admin/Desktop/0.txt' # 要開啟的檔案路徑
+openfilename = 'C:/Users/admin/Desktop/test.txt' # 要開啟的檔案路徑
 savefilename = 'C:/Users/admin/Desktop/01.txt' # 要存檔的名稱與路徑
 x = 0 # 去除的行數 計數用
 # 開啟要編輯的檔案

@@ -19,3 +19,9 @@ C:\Program Files\Tesseract-OCR\tessdata
 
 2020.03.31
 + 增加說明 調整部分
+
+tip
+===
+可折疊
+#region My Block of Code
+#endregion
