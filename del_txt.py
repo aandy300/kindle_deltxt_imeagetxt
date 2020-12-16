@@ -1,6 +1,9 @@
 import os, time, random
 from zhconv import convert # 簡轉繁
 
+from tkinter.filedialog import askopenfilename
+from tkinter import Tk
+
 # 確認檔案是否在 > 去除不要的字元 > 轉繁體 > 另存
 
 # 待更改點  #########
@@ -17,6 +20,12 @@ from zhconv import convert # 簡轉繁
 # 使用說明 #################################
 
 text = "的標註|添加於" # 要刪除的行 包含的文字
+
+# 未實裝 tkinter 
+# filename = askopenfilename()
+filename = askopenfilename(filetypes=[("Image files", "*.png"), ("All Files", "*.*")]) # 檔案類型 篩選
+Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing # 隱藏tk ui
+
 openfilename = 'C:/Users/admin/Desktop/test.txt' # 要開啟的檔案路徑
 savefilename = 'C:/Users/admin/Desktop/01.txt' # 要存檔的名稱與路徑
 x = 0 # 去除的行數 計數用
